@@ -1,0 +1,13 @@
+.header_white {
+  position: relative;
+  min-height: 120px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  padding: 20px 0;
+  font-weight: 600;
+  margin: 0;
+  background: #fff;
+}
+.logoimage {
+  display: block;
+}
