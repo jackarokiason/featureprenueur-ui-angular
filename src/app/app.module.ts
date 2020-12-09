@@ -10,8 +10,15 @@ import { ForemployersComponent } from './foremployers/foremployers.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FeatureprojectsComponent } from './featureprojects/featureprojects.component';
-import { LoginheaderComponent } from './loginheader/loginheader.component'
-
+import { LoginheaderComponent } from './loginheader/loginheader.component';
+import { FeatureComponent } from './feature/feature.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { FeatureDetailComponent } from './feature-detail/feature-detail.component'
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +30,20 @@ import { LoginheaderComponent } from './loginheader/loginheader.component'
     SignupComponent,
     FeatureprojectsComponent,
     LoginheaderComponent,
+    FeatureComponent,
+    FeatureDetailComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

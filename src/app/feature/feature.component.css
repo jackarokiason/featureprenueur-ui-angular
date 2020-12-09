@@ -1,0 +1,7 @@
+.top_banner {
+  background: linear-gradient(154deg, #055791 0, #00b29c 100%) fixed;
+  display: inline-block;
+  padding: 25px 0;
+  width: 100%;
+  margin: 0 0 -6px 0px;
+}

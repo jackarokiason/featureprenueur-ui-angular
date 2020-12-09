@@ -1,0 +1,205 @@
+<app-loginheader></app-loginheader>
+
+    <section class="top_banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="info-banner__main-content text-center">
+              <h1 class="info-banner__title">
+                Welcome to <b>Tactii</b> Competitions
+              </h1>
+              <h2 class="info-banner__subtitle">
+                Challenge yourself with real-world machine learning problems
+              </h2>
+              <hr class="info-banner__divider" />
+              <ul class="info-banner__details">
+                <li class="info-banner__detail col-sm-4">
+                  <img
+                    alt="New to Data Science?"
+                    class="info-banner__detail-image"
+                    src="/assets/img/analytics1.png"
+                  />
+                  <h3 class="info-banner__detail-title">
+                    New to Data Science?
+                  </h3>
+                  <p class="info-banner__detail-text">
+                    Get started with a tutorial on our most popular competition
+                    for beginners, Titanic: Machine Learning from Disaster
+                  </p>
+                </li>
+                <li class="info-banner__detail col-sm-4">
+                  <img
+                    alt="Build a Model"
+                    class="info-banner__detail-image"
+                    src="/assets/img/analytics.png"
+                  />
+                  <h3 class="info-banner__detail-title">Build a Model</h3>
+                  <p class="info-banner__detail-text">
+                    Get the data &amp; use whatever tools or methods you prefer
+                    to make predictions.
+                  </p>
+                </li>
+                <li class="info-banner__detail col-sm-4">
+                  <img
+                    alt="Make a Submission"
+                    class="info-banner__detail-image"
+                    src="/assets/img/analytics2.png"
+                  />
+                  <h3 class="info-banner__detail-title">Make a Submission</h3>
+                  <p class="info-banner__detail-text">
+                    Upload your prediction file for real-time scoring &amp; a
+                    spot on the leaderboard.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="inner-pg-dash">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                <section class="page_inner">
+                  <div class="page_heading">
+                    <h3>Features</h3>
+                  </div>
+                  <section class="page_content challenges" id="feature-content">
+                    <!-- Challenges Post -->
+
+                    <!-- Challenges Post -->
+                  </section>
+                </section>
+                <!-- <ul class="pager">
+                  <li class="previous btn"><a href="#">Previous</a></li>
+                  <li class="next btn"><a href="#">Next</a></li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          //carousel options
+          $("#quote-carousel").carousel({
+            pause: true,
+            interval: 10000,
+          });
+        });
+      </script>
+      <script src="js/url.js"></script>
+      <script src="js/cookie.js"></script>
+      <script>
+        window.onload = () => {
+          fetch(`${url}api/get-user-details/${getCookie("userid")}`)
+            .then((res) => res.json())
+            .then((data) => {
+              document.getElementById("nav").innerHTML = `
+              <div class="container">
+          <div class="row">
+            <div class="col-sm-4 pull-left">
+              <a class="custom_head animated fadein" href="/"
+                ><img src="img/logo.png" width="50  px" alt="" title=""
+              /></a>
+            </div>
+            <div class="col-sm-8 pull-right">
+              <nav class="navbar-login pull-right">
+                <ul class="nav navbar-nav tr-hd-rg">
+                  <li class="dropdown">
+                    <a
+                      href="javascript:void(0)"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      uib-dropdown-toggle=""
+                      aria-expanded="false"
+                    >
+                      <span class="prof-img-frame img-circle user-img-upld">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <img
+                          alt="profile-img"
+                          height="40"
+                          width="40"
+                          src="img/male.png"
+                        />
+                      </span>
+                      <span class="name_trim ng-binding mt-2 user_name" >
+                        ${data.user_details.username}
+                      </span>
+                      <b class="caret"></b
+                    ></a>
+                    <ul class="dropdown-menu">
+                      <li role="menuitem">
+                        <a href="view-profile.html">View Profile</a>
+                      </li>
+                      <li role="menuitem">
+                        <a href="edit-profile.html">Edit Profile</a>
+                      </li>
+                      <li role="menuitem">
+                        <a href="employer-features.html">Feature</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li role="menuitem"><a href="index.html">Logout</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+            `;
+            });
+          fetch(`${url}api/get-all-features`)
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              features = data.features;
+              let content = "";
+              features.forEach((feature) => {
+                if (feature.status != "Deleted") {
+                  content = `${content}
+                    <div class="post-row">
+                      <a href="#" onclick="setFeature(${feature.feature_id})">
+                      <div class="post-thumb">
+                          <img
+                          src="https://webdesignernews.s3.amazonaws.com/post_images/1783469/logo-design-process_facebook-a31d24668870e55ed1a548087a92f138-9f81-140x112.png"
+                          class="post-thumb-img"
+                          alt=""
+                          />
+                      </div>
+                      <div class="post">
+                          <div class="post-info">
+                          <h2 class="text-capitalize">${feature.title}</h2>
+                          <div class="post-meta">
+                              <div class="post-meta-info">
+                              <label>
+                                  Started:
+                                  <span class="">${feature.created_at}</span>
+                              </label>
+                              </div>
+                          </div>
+                          </div>
+                          <span class="prize">View Details</span>
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                      </div>
+                      </a>
+                  </div>`;
+                }
+              });
+              document.getElementById("feature-content").innerHTML = content;
+            })
+            .catch((err) => console.log(err));
+        };
+        function setFeature(id) {
+          setCookie("featureid", id, 1);
+          window.location.assign("/feature-detail.html");
+        }
+      </script>

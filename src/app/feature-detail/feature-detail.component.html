@@ -1,0 +1,256 @@
+
+<nav class="navbar navbar-white navbar-white-inner navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 pull-left">
+        <a class="custom_head animated fadein" href="/"
+          ><img src="/assets/img/logo.png" width="50  px" alt="" title=""
+        /></a>
+      </div>
+      <div class="col-sm-8 pull-right">
+        <nav class="navbar-login pull-right">
+          <ul class="nav navbar-nav tr-hd-rg">
+            <li class="dropdown">
+              <a
+                href="javascript:void(0)"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                uib-dropdown-toggle=""
+                aria-expanded="false"
+              >
+                <span class="prof-img-frame img-circle user-img-upld">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <img
+                    alt="profile-img"
+                    height="40"
+                    width="40"
+                    src="/assets/img/male.png"
+                  />
+                </span>
+                <span class="name_trim ng-binding mt-2 user_name" id="name">
+                </span>
+                <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li role="menuitem">
+                  <a href="view-profile.html">View Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="edit-profile.html">Edit Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="coins.html">Coins</a>
+                </li>
+                <li role="menuitem">
+                  <a href="feature.html">Features</a>
+                </li>
+                <li class="divider"></li>
+                <li role="menuitem"><a href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="top_banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="info-banner__main-content text-center">
+          <h1 class="info-banner__title">
+            Welcome to <b>Tactii</b> Competitions
+          </h1>
+          <h2 class="info-banner__subtitle">
+            Challenge yourself with real-world machine learning problems
+          </h2>
+          <hr class="info-banner__divider" />
+          <ul class="info-banner__details">
+            <li class="info-banner__detail col-sm-4">
+              <img
+                alt="New to Data Science?"
+                class="info-banner__detail-image"
+                src="/assets/img/analytics1.png"
+              />
+              <h3 class="info-banner__detail-title">
+                New to Data Science?
+              </h3>
+              <p class="info-banner__detail-text">
+                Get started with a tutorial on our most popular competition
+                for beginners, Titanic: Machine Learning from Disaster
+              </p>
+            </li>
+            <li class="info-banner__detail col-sm-4">
+              <img
+                alt="Build a Model"
+                class="info-banner__detail-image"
+                src="/assets/img/analytics.png"
+              />
+              <h3 class="info-banner__detail-title">Build a Model</h3>
+              <p class="info-banner__detail-text">
+                Get the data &amp; use whatever tools or methods you prefer
+                to make predictions.
+              </p>
+            </li>
+            <li class="info-banner__detail col-sm-4">
+              <img
+                alt="Make a Submission"
+                class="info-banner__detail-image"
+                src="/assets/img/analytics2.png"
+              />
+              <h3 class="info-banner__detail-title">Make a Submission</h3>
+              <p class="info-banner__detail-text">
+                Upload your prediction file for real-time scoring &amp; a
+                spot on the leaderboard.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inner-pg-dash">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <section class="page_inner">
+              <div class="page_heading">
+                <h3>Features</h3>
+              </div>
+              <section class="page_content challenges" id="feature-content">
+                <!-- Challenges Post -->
+
+                <!-- Challenges Post -->
+              </section>
+            </section>
+            <!-- <ul class="pager">
+              <li class="previous btn"><a href="#">Previous</a></li>
+              <li class="next btn"><a href="#">Next</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inner-pg-dash">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="feature-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    //carousel options
+    $("#quote-carousel").carousel({
+      pause: true,
+      interval: 10000,
+    });
+  });
+</script>
+<script src="js/url.js"></script>
+<script src="js/cookie.js"></script>
+<script>
+  window.onload = () => {
+    fetch(`${url}api/get-user-details/${getCookie("userid")}`)
+      .then((res) => res.json())
+      .then((data) => {
+        document.getElementById("name").innerHTML =
+          data.user_details.username;
+      });
+    fetch(
+      `${url}api/check-feature-progress/${getCookie("userid")}/ ${getCookie(
+        "featureid"
+      )}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const feature = data;
+        let status, footer;
+        if (feature.engage_status == "Inprogress") {
+          status = `<span class="medium">${feature.engage_status}</span>`;
+          footer = `<div class="col-sm-6">
+          <a href="submit-feature.html" class="btn btn-success pull-right">Submit</a>`;
+        } else if (feature.engage_status == "Submitted") {
+          status = `<span class="hard">${feature.engage_status}</span>`;
+          footer = `<div class="col-sm-12">
+                      <span><b>Primary Link :</b></span><a href="${feature.primary_link}" target="_blank">${feature.primary_link}</a><br />
+                      <span><b>Secondary Link :</b></span><a href="${feature.secondary_links}" target="_blank">${feature.secondary_links}</a><br />
+                      <span><b>Loom Link :</b></span><a href="${feature.loom_link}" target="_blank">${feature.loom_link}</a>
+                    </div>`;
+        } else {
+          status = `<span class="low">${feature.engage_status}</span>`;
+          footer = `<button class="btn btn-success pull-right" onclick="engage()">Engage</button>`;
+        }
+        let content = `
+              <section class="page_inner">
+                <div class="page_heading">
+                  <a href="features.html"class="btn btn-default pull-right">
+                    Back
+                  </a>
+                  <h3 class="text-capitalize">${feature.title}</h3>
+                  <div class="post-meta">
+                    <div class="post-meta-info">
+                      <label>
+                        Started: <span>${feature.created_at}</span>
+                      </label>
+                      <label>Status:${status}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="chall-details">
+                      <div class="content-area">
+                        <h3>Description</h3>
+                        <p>${feature.content}</p>
+                      </div>
+                      <hr/>
+                      <div class="bottom-area">
+                        <div class="col-sm-6">
+                          <span>Created By: <b>${feature.given_by_name}</b></span>
+                        </div>
+                        ${footer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>`;
+        document.getElementById("feature-content").innerHTML = content;
+      })
+      .catch((err) => console.log(err));
+  };
+  function engage() {
+    fetch(`${url}api/solo-engage-feature`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_id: parseInt(getCookie("userid")),
+        feature_id: parseInt(getCookie("featureid")),
+      }),
+    }).then((res) =>res.json()).then((data)=> {
+      console.log(data)
+      // window.location.assign("feature-detail.html");
+    });
+  }
+</script>

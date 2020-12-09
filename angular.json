@@ -24,14 +24,14 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [
               "src/assets/js/jquery.syntaxhighlighter.js",
               "src/assets/js/bootstrap.min.js",
               "src/assets/js/cookie.js",
-             "src/assets/js/circle-progress.js",
-
+              "src/assets/js/circle-progress.js",
               "src/assets/js/customstoper.js",
               "src/assets/js/jquery.syntaxhighlighter.js",
               "src/assets/js/knockout-3.2.0.js",
@@ -103,6 +103,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

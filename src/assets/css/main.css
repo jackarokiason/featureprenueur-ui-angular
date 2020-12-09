@@ -2966,6 +2966,7 @@ i.fa.fa-times {
   .baner-right {
     width: 50%;
     float: left;
+    margin-top: 20px;
   }
   .baner-right img {
     min-height: 581px;
