@@ -1,0 +1,342 @@
+<nav class="navbar navbar-white navbar-white-inner navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 pull-left">
+        <a class="custom_head animated fadein" href="/"
+          ><img src="/assets/img/logo.png" width="50  px" alt="" title=""
+        /></a>
+      </div>
+      <div class="col-sm-8 pull-right">
+        <nav class="navbar-login pull-right">
+          <ul class="nav navbar-nav tr-hd-rg">
+            <li class="dropdown">
+              <a
+                href="javascript:void(0)"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                uib-dropdown-toggle=""
+                aria-expanded="false"
+              >
+                <span class="prof-img-frame img-circle user-img-upld">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <img
+                    alt="profile-img"
+                    height="40"
+                    width="40"
+                    src="/assets/img/male.png"
+                  />
+                </span>
+                <span class="name_trim ng-binding mt-2 user_name" id="name">
+                </span>
+                <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li role="menuitem">
+                  <a href="view-profile.html">View Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="edit-profile.html">Edit Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="coins.html">Coins</a>
+                </li>
+                <li role="menuitem">
+                  <a href="features.html">Features</a>
+                </li>
+                <li class="divider"></li>
+                <li role="menuitem"><a href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</nav>
+<style></style>
+<section class="inner-pg-dash">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <section class="project_pg profile-m-box section">
+          <article class="pro_box" id="profile"></article>
+          <article class="pro article-block">
+            <div class="content-box__title-bar">
+              <div class="content-box__title">Bio</div>
+            </div>
+            <div class="pro_cont">
+              <p id="bio">--Update Your Bio--</p>
+            </div>
+          </article>
+          <article class="row">
+            <div class="col-sm-12">
+              <!-- Credits -->
+              <article class="pro article-block">
+                <div class="content-box__title-bar">
+                  <div class="content-box__title">
+                    Coin and Score status
+                  </div>
+                </div>
+                <div class="pro_cont credit-stat">
+                  <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-12">
+                      <table class="table-stats-pro">
+                        <tr>
+                          <td class="text-left">Coins</td>
+                          <td class="text-right" id="total_tc">0</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">ML Score</td>
+                          <td class="text-right" id="ml_score">0</td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">Github Score</td>
+                          <td class="text-right" id="git_score">0</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!-- <div class="col-sm-5">
+                                            <table class="table-stats-pro">
+                                              <tr>
+                                                    <td class="text-left">Stackoverflow Score</td>
+                                                    <td class="text-right">N/A</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-left">Github Score</td>
+                                                    <td class="text-right">N/A</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-left">Medium Score</td>
+                                                    <td class="text-right">N/A</td>
+                                                </tr>
+                                            </table>
+                                        </div> -->
+                  </div>
+                </div>
+              </article>
+              <!-- Credits -->
+            </div>
+            <div class="col-sm-12" id="rm-nonuser">
+              <article class="pro article-block">
+                <div class="content-box__title-bar">
+                  <div class="content-box__title">
+                    Featurepreneur Projects
+                    <div class="icon-com"></div>
+                    <a href="features.html" class="title-more"
+                      ><i class="fa fa-angle-right"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="pro_cont pro-list-sc">
+                  <div
+                    class="teaser-list teaser-list-1-item-height"
+                    id="feature"
+                  >
+                    --You are currently not working on any Features--
+                  </div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <!-- Highlights -->
+          <!-- <article class="pro article-block">
+                        <div class="content-box__title-bar">
+                            <div class="content-box__title">Highlights</div>
+                        </div>
+                        <div class="pro_cont">
+                            <ul>
+                                <li>Showcased a demo at RBC</li>
+                                <li>2018 Hackathon Finalist @ Toronto</li>
+                                <li>Contributed 3 Feature Bounty Projects</li>
+                            </ul>
+                        </div>
+                    </article> -->
+          <!--/ Highlights -->
+
+          <!-- Badges -->
+          <!-- <article class="pro article-block">
+                        <div class="content-box__title-bar">
+                            <div class="content-box__title">Badges</div>
+                        </div>
+                        <div class="pro_cont">
+                            <div class="carousel-wrap">
+                                <div class="owl-carousel row">
+                                    <div class="col-sm-3">
+                                        <div class="item">
+                                            <div class="badges-label"> <img src="img/badges/active-user.png" alt="Gister" title="Gister" />
+                                                <h4>25</h4></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="item">
+                                            <div class="badges-label"> <img src="img/badges/Interview-Acer.png" alt="Interview Acer" title="Interview Acer" />
+                                                <h4>15</h4></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="item">
+                                            <div class="badges-label"> <img src="img/badges/problem-resolver.png" alt="Problem Solver" title="Problem Solver" />
+                                                <h4>35</h4></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="item">
+                                            <div class="badges-label"> <img src="img/badges/Explorer-badge.png" alt="Super Active Member" title="Super Active Member" />
+                                                <h4>40</h4></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="item">
+                                            <div class="badges-label"> <img src="img/badges/100-code.png" alt="Gister" title="Gister" />
+                                                <h4>25</h4></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pro_cont">
+                            <div class="carousel-wrap">
+                                <div class="owl-carousel row">
+                                    <div class="col-sm-12">
+                                      <a href="badges-all.html">view more</a>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+
+                    </article> -->
+          <!--/ Badges -->
+
+          <!-- small talk -->
+          <!-- <article class="pro article-block" style="padding:0">
+                        <div class="pro_cont" style="background: none; padding: 0">
+                            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/524440464&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"> </iframe>
+                        </div>
+                    </article> -->
+          <!-- /small talk -->
+
+          <!-- Admirer circle -->
+          <!-- <article class="pro article-block">
+                        <div class="content-box__title-bar">
+                            <div class="content-box__title">Circle</div>
+                        </div>
+                        <div class="pro_cont">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home">Follwers
+                  <strong>(5)</strong>
+              </a></li>
+                                <li><a data-toggle="tab" href="#menu1">Follwers <strong>(5)</strong></a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a class="followers__item" href="#">
+                                                <div class="followers__avatar"> <span class="tooltip-container"> <img
+                          class="avatar__thumbnail" src="img/user/user1.JPG"
+                          alt="Janio Alexander Bachmann" width="45" height="45"
+                          style="border-radius: 4.5px;">
+                        </span> </div>
+                                                <div class="followers__name">Janio Alexander Bachmann </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a class="followers__item" href="#">
+                                                <div class="followers__avatar"> <span class="tooltip-container"> <img
+                          class="avatar__thumbnail" src="img/user/user2.png"
+                          alt="Kumar Nityan Suman" width="45" height="45"
+                          style="border-radius: 4.5px;">
+                        </span> </div>
+                                                <div class="followers__name">Kumar Nityan Suman</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a class="followers__item" href="#">
+                                                <div class="followers__avatar"> <span class="tooltip-container"> <img
+                          class="avatar__thumbnail" src="img/user/user4.jpg"
+                          alt="Faraz Rahman" width="45" height="45"
+                          style="border-radius: 4.5px;">
+                        </span> </div>
+                                                <div class="followers__name">Faraz Rahman</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a class="followers__item" href="#">
+                                                <div class="followers__avatar"> <span class="tooltip-container"> <img
+                          class="avatar__thumbnail" src="img/user/user5.jpg"
+                          alt="Rajat Gupta" width="45" height="45"
+                          style="border-radius: 4.5px;">
+                        </span> </div>
+                                                <div class="followers__name">Rajat Gupta</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article> -->
+          <!--/ Admirer circle -->
+
+          <!-- Similar Rockstars -->
+          <!-- <article class="pro article-block">
+                        <div class="content-box__title-bar">
+                            <div class="content-box__title">Similar Rockstars</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="similar-block">
+                                    <div> <img src="https://s3.amazonaws.com/tode/tact_images/avatar/12.png" class="img-responsive" alt="" title="" /> </div>
+                                    <div class="similar-content">
+                                        <h3>Wes Hather</h3>
+                                        <p>Vestibulum purus quam venenatis quis sollicitudin nec, elementum et quam Fusce ex ipsum, maximus nec viverra at, mattis et purus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="similar-block"> <img src="https://s3.amazonaws.com/tode/tact_images/avatar/13.png" class="img-responsive" alt="" title="" />
+                                    <div class="similar-content">
+                                        <h3>Archana Deskus</h3>
+                                        <p>Vestibulum purus quam venenatis quis sollicitudin nec, elementum et quam Fusce ex ipsum, maximus nec viverra at, mattis et purus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="similar-block"> <img src="https://s3.amazonaws.com/tode/tact_images/avatar/14.png" class="img-responsive" alt="" title="" />
+                                    <div class="similar-content">
+                                        <h3>Gordon Hempton</h3>
+                                        <p>Vestibulum purus quam venenatis quis sollicitudin nec, elementum et quam Fusce ex ipsum, maximus nec viverra at, mattis et purus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article> -->
+          <!--/ Similar Rockstars -->
+
+          <!-- expert comments -->
+          <!-- <article class="pro article-block">
+                        <div class="content-box__title-bar">
+                            <div class="content-box__title">Expert Recommendations</div>
+                        </div>
+                        <div class="pro_cont">
+                            <p>
+                              <ul class="comment_box">
+
+                                <li>I have known Sumeet while mentoring his team during some of the turnkey projects related to information security and machine learning. I was impressed by his quick grasp of difficult concepts and the speed of creating of various proof of concepts. Intuition and perseverance is very important in the world of big data and analytics and I think he has plenty of both. I wish best of luck for his future.</li>
+
+                                <li>Sushmita is a vivid learn and sincere learn through the course at INSOFE. She was one of the top performing students in the batch.</li>
+
+                                <li>I've worked with Alexa since the first year of HoHoTO and she has been a key leader of our group. Without her organizational skills, attention to detail and operational judgement, HoHoTO could not have grown into what is now one of the DailyBread Food Bank's most successful fundraising events.</li>
+
+                              </ul>
+                            </p>
+                        </div>
+                    </article> -->
+          <!-- /expert comments -->
+        </section>

@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { FeatureDetailComponent } from './feature-detail/feature-detail.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     LoginheaderComponent,
     FeatureComponent,
     FeatureDetailComponent,
+    EditProfileComponent,
+    ViewProfileComponent,
 
   ],
   imports: [

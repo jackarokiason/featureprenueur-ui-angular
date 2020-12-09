@@ -3,6 +3,7 @@ declare var bootstrap;
 declare var setCookie;
 declare var url;
 declare var $: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,6 +14,13 @@ export class LoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    $(document).ready(function () {
+      //carousel options
+      $("#quote-carousel").carousel({
+        pause: true,
+        interval: 10000,
+      });
+    });
     document.addEventListener("submit", sendData);
     function sendData(e) {
       e.preventDefault();

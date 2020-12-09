@@ -9,3 +9,13 @@ h2 {
   color: #2c3e4d;
   font-size: 30px;
 }
+a {
+  text-decoration: none !important;
+}
+.err-msg {
+  padding: 10px;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.25);
+  border: 1px solid red;
+  margin-bottom: 10px;
+}

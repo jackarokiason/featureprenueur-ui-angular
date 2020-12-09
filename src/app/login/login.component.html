@@ -46,9 +46,9 @@
                     id="password"
                   />
                 </div>
-                  <button  type="submit" class="btn btn-primary btn-block">
-                  Login
-                </button>
+             <a href="/feature-detail.html"
+                  type="submit" class="btn btn-primary btn-block"> Login </a>
+
               </form>
               <div class="btm-sec text-center">
                 <a href="" class="frgt-pswd">Forgot your password?</a>
@@ -80,8 +80,8 @@
  document.addEventListener("submit", sendData);
     function sendData(e) {
       e.preventDefault();
-      const password = document.getElementById("password");
-      const email = document.getElementById("email");
+      const password = document.getElementById("password").nodeValue;
+      const email = document.getElementById("email").nodeValue;
       fetch(`${url}api/login`, {
         method: "POST",
         headers: {

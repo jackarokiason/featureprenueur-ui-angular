@@ -1,0 +1,134 @@
+<nav class="navbar navbar-white navbar-white-inner navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 pull-left">
+        <a class="custom_head animated fadein" href="/"
+          ><img src="/assets/img/logo.png" width="50  px" alt="" title=""
+        /></a>
+      </div>
+      <div class="col-sm-8 pull-right">
+        <nav class="navbar-login pull-right">
+          <ul class="nav navbar-nav tr-hd-rg">
+            <li class="dropdown">
+              <a
+                href="javascript:void(0)"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                uib-dropdown-toggle=""
+                aria-expanded="false"
+              >
+                <span class="prof-img-frame img-circle user-img-upld">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <img
+                    alt="profile-img"
+                    height="40"
+                    width="40"
+                    src="/assets/img/male.png"
+                  />
+                </span>
+                <span class="name_trim ng-binding mt-2 user_name" id="name">
+                </span>
+                <b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li role="menuitem">
+                  <a href="view-profile.html">View Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="edit-profile.html">Edit Profile</a>
+                </li>
+                <li role="menuitem">
+                  <a href="coins.html">Coins</a>
+                </li>
+                <li role="menuitem">
+                  <a href="features.html">Features</a>
+                </li>
+                <li class="divider"></li>
+                <li role="menuitem"><a href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="inner-pg-dash">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-block-left heading-panel">
+              <a class="pull-right btn btn-primary" href="view-profile.html"
+                >View Public Profile >></a
+              >
+              <h3>Update your Profile</h3>
+              <p>
+                Add information about yourself to share on your profile.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <nav class="side_menu">
+              <ul>
+                <li class="active"><a href="#">About Me</a></li>
+                <li><a href="edit-coding.html">Coding Activities</a></li>
+                <!-- <li><a href="tact-coins.html">Tact Coins History</a></li>
+                <li><a href="teams.html">My Teams</a></li>
+                <li>
+                  <a href="features-working.html">Features Working ON</a>
+                </li> -->
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-9">
+            <section class="page_inner">
+              <div class="page_heading">
+                <h3>About Me</h3>
+              </div>
+              <section class="page_content">
+                <div class="layout xs-mth0">
+                  <div
+                    class="layout__item xs-12of12"
+                    data-name="desired-headline"
+                  >
+                    <div class="form-group field field--required">
+                      <label class="block-label">
+                        Say about your experience, skills, leadership and
+                        learning ability in 2-3 lines! It should be very
+                        simple and succinct
+                      </label>
+                      <p>
+                        This content will act like an Elevator Pitch when
+                        you have 40 seconds to convince your employer!
+                      </p>
+                      <textarea
+                        class="form-control"
+                        id="about-me"
+                        rows="5"
+                        ng-model="aboutMeContent"
+                        placeholder="Bio"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div class="page_footer">
+                <button
+                  class="btn-primary btn pull-left"
+                  onclick="update()"
+                >
+                  Save
+                </button>
+                <a href="/edit-coding.html" class="btn-white btn pull-right"
+                  >Next</a
+                >
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

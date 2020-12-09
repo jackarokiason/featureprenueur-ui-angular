@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {FeatureComponent} from './feature/feature.component';
 import { FeatureDetailComponent } from './feature-detail/feature-detail.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { profile } from 'console';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 const routes: Routes = [
   {
     path: '', component: HomeComponent
@@ -27,7 +30,13 @@ const routes: Routes = [
   },
   {
     path:'feature-detail.html', component:FeatureDetailComponent
-  }
+  },
+  {
+    path:'edit-profile.html', component:EditProfileComponent
+  },
+  {
+    path:'view-profile.html', component:ViewProfileComponent
+  },
 ];
 
 @NgModule({
