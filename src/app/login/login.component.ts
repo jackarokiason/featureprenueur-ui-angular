@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare var bootstrap;
 declare var setCookie;
 declare var url;
@@ -28,12 +28,21 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submitForm() {
-    var formData: any = new FormData();
-    formData.append("email", this.form.get('email').value);
-    formData.append("password", this.form.get('password').value);
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }  
 
-    this.http.post('http://0.0.0.0:8063/api/login', formData).subscribe(
+  submitForm() {
+    
+    var formData :any ={};
+    formData.email= this.form.get('email').value;
+    formData.password= this.form.get('password').value;
+    formData.user_role=2;
+    console.log(JSON.stringify(formData));   
+
+    this.http.post('http://0.0.0.0:8063/api/login?api_key=kaipuLla401326', JSON.stringify(formData) ,this.httpOptions).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     )
