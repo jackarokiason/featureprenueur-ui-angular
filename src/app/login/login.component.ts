@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { HttpClient } from '@angular/common/http';
 declare var bootstrap;
 declare var setCookie;
 declare var url;
@@ -10,46 +12,30 @@ declare var $: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  form: FormGroup;
 
-  constructor() {}
+  constructor(
+    public fb: FormBuilder,
+    private http: HttpClient
+  ) {
+    this.form = this.fb.group({
+      email: [''],
+      password : ['']
+    })
+  }
+  
 
-  ngOnInit(): void {
-    $(document).ready(function () {
-      //carousel options
-      $("#quote-carousel").carousel({
-        pause: true,
-        interval: 10000,
-      });
-    });
-    document.addEventListener("submit", sendData);
-    function sendData(e) {
-      e.preventDefault();
-      const password = (<HTMLInputElement>document.getElementById("password")).value;
-      const email = (<HTMLInputElement>document.getElementById("email")).value;
-      fetch(`${url}api/login`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-          user_role: 2,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.user_id === -1) {
-            document.getElementById(
-              "err-msg"
-            ).innerHTML = `<div class="err-msg">${data.authenticated}</div>`;
-          } else {
-            setCookie("userid", data.user_id, 1);
-            window.location.assign("/feature.html");
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-}}
+  ngOnInit(): void {}
+
+  submitForm() {
+    var formData: any = new FormData();
+    formData.append("email", this.form.get('email').value);
+    formData.append("password", this.form.get('password').value);
+
+    this.http.post('http://0.0.0.0:8063/api/login', formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    )
+  }
+}

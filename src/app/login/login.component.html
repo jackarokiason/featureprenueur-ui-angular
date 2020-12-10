@@ -12,7 +12,7 @@
                 <a href="register.html">Register</a>
               </p>
 
-              <form >
+              <form [formGroup]="form" (ngSubmit)="submitForm()">
                 <!-- <div class="social-signin text-center">
                   <a title="Facebook" class="fb"
                     ><i class="fa fa-facebook"></i>&nbsp;&nbsp;Continue with
@@ -33,6 +33,7 @@
 
                     class="form-control"
                     placeholder="Email Address"
+                    formControlName="email"
                     id="email"
 
                   />
@@ -43,12 +44,11 @@
                   type="password"
                     class="form-control"
                     placeholder="Password"
+                    formControlName="password"
                     id="password"
                   />
                 </div>
-             <a href="/feature-detail.html"
-                  type="submit" class="btn btn-primary btn-block"> Login </a>
-
+             <button id="button" type="submit" class="btn btn-primary btn-block"> Login </button>
               </form>
               <div class="btm-sec text-center">
                 <a href="" class="frgt-pswd">Forgot your password?</a>
@@ -77,11 +77,11 @@
 <script src="js/url.js"></script>
 <script src="js/cookie.js"></script>
 <script>
- document.addEventListener("submit", sendData);
+ document.getElementById("button").addEventListener("submit", sendData);
     function sendData(e) {
       e.preventDefault();
-      const password = document.getElementById("password").nodeValue;
-      const email = document.getElementById("email").nodeValue;
+      const password = document.getElementById("password").Value;
+      const email = document.getElementById("email").Value;
       fetch(`${url}api/login`, {
         method: "POST",
         headers: {
