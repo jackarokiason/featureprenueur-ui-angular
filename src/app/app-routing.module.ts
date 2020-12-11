@@ -9,6 +9,7 @@ import {FeatureComponent} from './feature/feature.component';
 import { FeatureDetailComponent } from './feature-detail/feature-detail.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '', component: HomeComponent
@@ -35,6 +36,9 @@ const routes: Routes = [
   },
   {
     path:'view-profile.html', component:ViewProfileComponent
+  },
+  {
+    path:'register.html', component:RegisterComponent
   },
 ];
 

@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     formData.email= this.form.get('email').value;
     formData.password= this.form.get('password').value;
     formData.user_role=2;
-    console.log(JSON.stringify(formData));   
+    
 
     this.http.post('http://0.0.0.0:8063/api/login?api_key=kaipuLla401326', JSON.stringify(formData) ,this.httpOptions).subscribe(
       (response) => console.log(response),

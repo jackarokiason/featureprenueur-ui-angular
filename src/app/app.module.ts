@@ -25,6 +25,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { from } from 'rxjs';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { from } from 'rxjs';
     FeatureDetailComponent,
     EditProfileComponent,
     ViewProfileComponent,
+    RegisterComponent,
 
   ],
   imports: [
